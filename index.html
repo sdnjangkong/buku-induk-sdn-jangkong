@@ -4,7 +4,7 @@
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#123d68"><title>Buku Induk Siswa | SDN Jangkong</title>
   <link rel="icon" href="assets/logo.svg" type="image/svg+xml"><link rel="stylesheet" href="styles.css">
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" onerror="this.onerror=null;this.src=\'https://unpkg.com/@supabase/supabase-js@2\'"></script>
   <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
 </head>
 <body>
@@ -39,5 +39,13 @@
       <div class="form-section"><h4>Data orang tua / wali</h4><div class="form-grid"><label>Nama ayah<input id="f_father"></label><label>NIK ayah<input id="f_fatherNik"></label><label>Pekerjaan ayah<input id="f_fatherJob"></label><label>Nama ibu<input id="f_mother"></label><label>NIK ibu<input id="f_motherNik"></label><label>Pekerjaan ibu<input id="f_motherJob"></label><label>Nama wali<input id="f_guardian"></label><label>Nomor KK<input id="f_kk"></label></div></div><div class="form-actions"><button type="button" id="cancelModal" class="btn outline">Batal</button><button class="btn primary" type="submit">Simpan data siswa</button></div></form></div></div>
   <div id="detailModal" class="modal hidden"><div class="modal-card"><div class="modal-head"><div><p class="eyebrow">LEMBAR BIODATA</p><h2 id="detailName">Detail siswa</h2></div><button class="close-btn" id="closeDetail">×</button></div><div id="detailContent"></div><div class="form-actions"><button class="btn outline" id="detailCloseBtn">Tutup</button><button class="btn primary" id="printDetail">Cetak buku induk</button></div></div></div>
   <div id="printRoot" aria-hidden="true"></div>
-  <div id="toast" class="toast"></div><script src="config.js"></script><script src="app.js"></script>
+  <div id="toast" class="toast"></div>
+  <script>
+    // Konfigurasi langsung sebagai cadangan agar tetap terbaca di GitHub Pages.
+    window.APP_CONFIG = window.APP_CONFIG || {
+      SUPABASE_URL: "https://giqwyemithshobsqwqlj.supabase.co",
+      SUPABASE_ANON_KEY: "sb_publishable_cxZPVdzfSH-lUvs27u2mgw_WecKtMvc"
+    };
+  </script>
+  <script src="app.js"></script>
 </body></html>
