@@ -34,3 +34,8 @@ create policy "Authenticated users manage school settings" on public.school_sett
 insert into public.school_settings(key,value) values
  ('school_name','SDN JANGKONG'),('npsn','20529470'),('address','Jangkong, Batang-Batang, Sumenep, Jawa Timur'),('school_year','2026/2027')
 on conflict(key) do nothing;
+
+
+-- Arsip kelulusan: siswa tetap tersimpan pada tabel yang sama.
+alter table public.students add column if not exists graduation_year integer;
+create index if not exists students_graduation_year_idx on public.students(graduation_year) where status = 'Lulus';
